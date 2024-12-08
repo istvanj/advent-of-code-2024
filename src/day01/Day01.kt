@@ -32,13 +32,7 @@ fun part1(locationIDData: LocationIDData): Int {
     return result
 }
 
-fun part2(locationIDData: LocationIDData): Int {
-    var result = 0
-    locationIDData.firstList.forEach {
-        result += it * locationIDData.secondList.count { i -> i == it }
-    }
-    return result
-}
+fun part2(locationIDData: LocationIDData) = locationIDData.firstList.sumOf { it * locationIDData.secondList.count { i -> i == it } }
 
 fun readToList(inputFileName: String): LocationIDData {
     val stringList = readInputToStringList(inputFileName)
